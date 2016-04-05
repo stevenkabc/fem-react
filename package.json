@@ -35,6 +35,7 @@
     "eslint-config-standard-jsx": "^1.1.1",
     "eslint-config-standard-react": "^2.3.0",
     "eslint-loader": "^1.3.0",
+    "eslint-plugin-html": "^1.4.0",
     "eslint-plugin-promise": "^1.0.8",
     "eslint-plugin-react": "^4.1.0",
     "eslint-plugin-standard": "^1.3.2",
@@ -53,14 +54,12 @@
     "type": "git",
     "url": "git+https://github.com/btholt/complete-intro-to-react.git"
   },
-
   "keywords": [
     "react",
     "workshop",
     "intro",
     "redux"
   ],
-
   "bugs": {
     "url": "https://github.com/btholt/complete-intro-to-react/issues"
   },
