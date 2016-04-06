@@ -5,7 +5,7 @@ const data = require('../public/data')
 class Search extends React.Component {
   /*
     const Search = React.createClass({
-      getInitialState(){
+      getInitialState () {
         return {
           searchTerm: 'Inital State'
         }
