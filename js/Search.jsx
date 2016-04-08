@@ -20,7 +20,7 @@ class Search extends React.Component {
   */
   constructor (props) {
     super(props)
-    console.log(props)
+//    console.log(props)
     this.state = {
       searchTerm: ''
     }
