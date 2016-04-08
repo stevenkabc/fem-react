@@ -1,6 +1,6 @@
 const React = require('react')
 const ShowCard = require('./ShowCard')
-const { arrayOf, object } = React.PropTypes
+const { object } = React.PropTypes
 
 class Search extends React.Component {
   /*
@@ -38,7 +38,7 @@ class Search extends React.Component {
           <input value={this.state.searchTerm} type='text' className='search-input' placeholder='Search' onChange={this.handleSearchTermEvent}/>
         </header>
         <div className='shows'>
-          {this.props.shows
+          {this.props.route.shows
             .filter((show) => `${show.title} ${show.description}`.toUpperCase()
             .includes(this.state.searchTerm.toUpperCase()))
             .map((show) => (
@@ -53,6 +53,6 @@ class Search extends React.Component {
 }
 
 Search.propTypes = {
-  shows: arrayOf(object)
+  route: object
 }
 module.exports = Search

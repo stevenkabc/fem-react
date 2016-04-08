@@ -2,18 +2,34 @@ const React = require('react')
 const ShowCard = require('./ShowCard')
 const { object } = React.PropTypes
 
-const Search = React.createClass({
-  getInitialState () {
-    return {
+class Search extends React.Component {
+  /*
+    const Search = React.createClass({
+      getInitialState () {
+        return {
+          searchTerm: 'Inital State'
+        }
+      }, //PROPTYPES FOR CREATECLASS() VERSION
+      propTypes: {
+        shows: arrayOf(object)
+      },
+      handleSearchTermEvent (event) {
+        this.setState({ searchTerm: event.target.value})
+      },
+      render { return ( <div> ... </div )}
+  */
+  constructor (props) {
+    super(props)
+    console.log(props)
+    this.state = {
       searchTerm: ''
     }
-  },
-  propTypes: {
-    route: object
-  },
+    this.handleSearchTermEvent = this.handleSearchTermEvent.bind(this)
+  }
+
   handleSearchTermEvent (event) {
     this.setState({searchTerm: event.target.value})
-  },
+  }
   render () {
     return (
       <div className='container'>
@@ -23,7 +39,8 @@ const Search = React.createClass({
         </header>
         <div className='shows'>
           {this.props.route.shows
-            .filter((show) => `${show.title} ${show.description}`.toUpperCase().includes(this.state.searchTerm.toUpperCase()))
+            .filter((show) => `${show.title} ${show.description}`.toUpperCase()
+            .includes(this.state.searchTerm.toUpperCase()))
             .map((show) => (
               <ShowCard {...show} key={show.imdbID}/>
               )
@@ -33,5 +50,9 @@ const Search = React.createClass({
       </div>
     )
   }
-})
+}
+
+Search.propTypes = {
+  route: object
+}
 module.exports = Search
