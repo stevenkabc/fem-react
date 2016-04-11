@@ -8,8 +8,7 @@
     "lint": "standard",
     "build": "webpack",
     "watch": "webpack --watch",
-    "serve": "http-server -p 8080 ./",
-
+    "server": "http-server -p 8080 ./",
     "cover": "nyc --reporter=lcov --reporter=text --reporter=html --require babel-register --extension .jsx npm test"
   },
   "author": "Brian Holt <btholt@gmail.com>",
@@ -46,6 +45,7 @@
     "mocha": "^2.4.5",
     "nyc": "^6.2.1",
     "react-addons-test-utils": "^0.14.7",
+    "remote-redux-devtools": "^0.1.5",
     "sinon": "^1.17.3",
     "webpack": "^1.12.13"
   },
