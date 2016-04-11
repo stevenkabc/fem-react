@@ -5,7 +5,7 @@ const { connector } = require('./Store')
 class Landing extends React.Component {
   constructor (props) {
     super(props)
-
+    this.props.setSearchTerm('')
     this.handleSearchTermEvent = this.handleSearchTermEvent.bind(this)
     this.gotoSearch = this.gotoSearch.bind(this)
   }
